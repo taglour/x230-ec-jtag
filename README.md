@@ -1,5 +1,6 @@
-# Reading/writing the X230 EC over JTAG
-Notes on reading/writing to the Lenovo X230 embedded controller via JTAG
+# Notes on reading/writing the X230 embedded controller over JTAG
+
+If for some reason you can't flash the EC via the BIOS, you will need to use JTAG. Unfortunately this procedure is not very well documented elsewhere on the Internet. Here is how it is done.
 
 *This document will not be maintained, long term. If you have major contributions to make and the original author does not respond to issues opened, please don't hesidate to fork it.*
 
@@ -42,7 +43,7 @@ Repair technicians have [reported in forums](https://www.elektroda.com/rtvforum/
 
 ## Connecting to JTAG
 
-You'll need a copy of the [X230 Schematic](http://plan9.stanleylieber.com/hardware/thinkpad/x230/x230.schematics.pdf)
+You'll need a copy of the [X230 Schematic](http://plan9.stanleylieber.com/hardware/thinkpad/x230/x230.schematics.pdf).
 
 Page 62 of the schematic shows the EC JTAG pins which need to be soldered to.
 
@@ -59,3 +60,5 @@ The JTAG RST pin is not part of this connector, and must be tapped next to the M
 
 ![JTAG RST pad location](images/jtag-rst-01.jpg)
 ![JTAG RST pad location](images/jtag-rst-02.jpg)
+
+If you do not connect the RST pin, then reading/writing the flash will not work.
